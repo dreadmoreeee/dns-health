@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dns-health"
+version = "1.0.0"
+description = "DNS health report for a domain: nameservers, SOA, lame delegation, DNSSEC, CAA vs the live certificate, TTLs, wildcards, dangling CNAMEs, mail pointers."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Marvin Palencia"}]
+requires-python = ">=3.10"
+dependencies = ["dnspython>=2.4"]
+keywords = ["dns", "dnssec", "caa", "soa", "subdomain takeover", "health check"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Topic :: Internet :: Name Service (DNS)"]
+
+[project.urls]
+Author = "https://marvin.demarkstudio.ca"
+
+[project.scripts]
+dns-health = "dns_health.cli:main"
+
+[tool.setuptools]
+packages = ["dns_health"]
